@@ -162,4 +162,9 @@ public class TestMetadata {
 			fail("Failed with exception: " + ex);
 		}	
 	}
+
+	@Test
+	public void testGetFeature(){
+
+	}
 }

@@ -18,6 +18,7 @@ package com.hpe.adm.nga.sdk.metadata;
 import com.hpe.adm.nga.sdk.metadata.features.Feature;
 
 import java.util.Collection;
+import java.util.Optional;
 
 /**
  *
@@ -62,6 +63,17 @@ public class EntityMetadata {
 	 */
 	public Collection<Feature> features(){
 		return features;
+	}
+
+	/**
+	 * Returns a feature according to its class.  If the feature does not exist then null will be returned
+	 * @param featureName
+	 * @param <T>
+	 * @return
+	 */
+	public<T extends Feature>  T getFeature(Class<T> featureClass) {
+		final Optional<Feature> foundFeature = features().stream().filter(feature -> feature.getClass() == featureClass).findFirst();
+		return foundFeature.isPresent() ? (T) foundFeature.get() : null;
 	}
 
 	/**

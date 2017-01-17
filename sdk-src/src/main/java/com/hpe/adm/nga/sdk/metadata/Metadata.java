@@ -201,7 +201,7 @@ public class Metadata {
 				feature = new Gson().fromJson(jasoFeatureObj.toString(), HierarchyFeature.class);
             break;
 			case FEATURE_UDF_ENTITY_NAME:
-				feature = new Gson().fromJson(jasoFeatureObj.toString(), UdfFearture.class);
+				feature = new Gson().fromJson(jasoFeatureObj.toString(), UdfFeature.class);
 				break;
 			case FEATURE_ORDERING_ENTITY_NAME:
 				feature = new Gson().fromJson(jasoFeatureObj.toString(), OrderingFeature.class);
